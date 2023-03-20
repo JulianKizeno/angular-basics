@@ -1,3 +1,73 @@
+<div class="container">
+  <h1 class="formTitle">Register Form</h1>
+  <form (ngSubmit)="onSignUp" #myForm="ngForm">
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        #nameInput="ngModel"
+        [(ngModel)]="register.name"
+        class="line-error"
+        [ngClass]="{
+          'valid':  nameInput.valid && nameInput.dirty,
+          'invalid': nameInput.hasError('required') && nameInput.dirty
+        }"
+        required>
+      <small
+        class="message-error"
+        *ngIf="nameInput.hasError('required') && nameInput.dirty"
+      >
+        This field is required
+      </small>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        #emailInput="ngModel"
+        [(ngModel)]="register.email"
+        class="line-error"
+        [ngClass]="{
+          'valid':  emailInput.valid && emailInput.dirty,
+          'invalid': emailInput.hasError('required') && emailInput.dirty
+        }"
+        required>
+      <small
+        class="message-error"
+        *ngIf="emailInput.hasError('required') && emailInput.dirty"
+      >
+        This field is required
+      </small>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        #passwordInput="ngModel"
+        [(ngModel)]="register.password"
+        class="line-error"
+        [ngClass]="{
+          'valid':  passwordInput.valid && passwordInput.dirty,
+          'invalid': passwordInput.hasError('required') && passwordInput.dirty
+        }"
+        required>
+      <small
+        class="message-error"
+        *ngIf="passwordInput.hasError('required') && passwordInput.dirty">
+        This field is required
+      </small>
+    </div>
+    <button class="btnSmit" [disabled]="myForm.invalid" type="submit">Sign Up</button>
+  </form>
+</div>
+
+<!-- <hr>
 <h1>NgClass & NgStyle</h1>
 <input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
 <hr
@@ -7,7 +77,7 @@
     'invalid': nameInput.invalid
   }">
 <p class="message-error" [class.invalid]="nameInput.invalid">
-  El campo es requerido
+  This field is required
 </p>
 <div class="styles-grid">
   <div>
@@ -25,4 +95,4 @@
       >
     </div>
   </div>
-</div>
+</div> -->

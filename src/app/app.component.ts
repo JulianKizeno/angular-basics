@@ -10,6 +10,11 @@ export class AppComponent {
   age = 32;
   img = 'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Prescription01&hairColor=Brown&facialHairType=BeardLight&facialHairColor=Brown&clotheType=CollarSweater&clotheColor=Black&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Twinkle&skinColor=Pale';
   btnDisabled = true;
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
   person = {
     name: 'Julian',
     age: 32,
@@ -19,5 +24,9 @@ export class AppComponent {
     width: 100,
     height: 100,
     background: 'red'
+  }
+
+  onSignUp() {
+    console.log(this.register)
   }
 }
