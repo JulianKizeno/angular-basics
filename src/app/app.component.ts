@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -27,6 +28,6 @@ export class AppComponent {
   }
 
   onSignUp() {
-    console.log(this.register)
+    // Registration credentials must never be written to the console.
   }
 }
